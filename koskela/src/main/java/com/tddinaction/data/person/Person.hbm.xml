@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tddinaction.data.person">
+
+	<class name="Person" table="PEOPLE">
+		<id name="id" column="id" type="long">
+			<generator class="hilo" />
+		</id>
+		<property name="firstname" column="first_name" not-null="true"
+			type="string" />
+		<property name="lastname" column="last_name" not-null="true"
+			type="string" />
+	</class>
+
+</hibernate-mapping>

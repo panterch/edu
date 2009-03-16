@@ -1,0 +1,4 @@
+<testcase>
+  <expected>5</expected>
+  <data>ABCDE</data>
+</testcase>

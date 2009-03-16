@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tddinaction.data.hibernate">
+
+	<class name="Article" table="ARTICLES">
+		<id name="id" column="id" type="long">
+			<generator class="hilo" />
+		</id>
+		<property name="title" not-null="true" type="string" />
+		<property name="body" not-null="true" type="string" />
+		<list name="attachments">
+			<key column="article_id" />
+			<index column="order" />
+			<one-to-many class="Attachment" />
+		</list>
+	</class>
+
+</hibernate-mapping>

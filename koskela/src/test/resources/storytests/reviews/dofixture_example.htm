@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>DoFixture Example</title>
+</head>
+<body>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">com.tddinaction.fit.fixtures.ReviewsDoFixture</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="4" rowspan="1" style="vertical-align: top;">setup book data</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">title<br>
+      </td>
+      <td style="vertical-align: top;">edition<br>
+      </td>
+      <td style="vertical-align: top;">ISBN<br>
+      </td>
+      <td style="vertical-align: top;">authors<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">JUnit Recipes<br>
+      </td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">1932394230</td>
+      <td style="vertical-align: top;">J.B. Rainsberger, Scott Stirling</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Spring in Action<br>
+      </td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">1932394354</td>
+      <td style="vertical-align: top;">Craig Walls, Ryan Breidenbach</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Ajax in Action<br>
+      </td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">1932394613</td>
+      <td style="vertical-align: top;">Dave Crane, Eric Pascarello, Darren James</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="4" rowspan="1" style="vertical-align: top;">setup review data</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">title<br>
+      </td>
+      <td style="vertical-align: top;">edition<br>
+      </td>
+      <td style="vertical-align: top;">review date<br>
+      </td>
+      <td style="vertical-align: top;">review text<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="3" rowspan="1" style="vertical-align: top;">go to front page</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ensure<br>
+      </td>
+      <td style="vertical-align: top;">text present<br>
+      </td>
+      <td style="vertical-align: top;">Found reviews for 0 books<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="4" rowspan="1" style="vertical-align: top;">setup review data<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">title<br>
+      </td>
+      <td style="vertical-align: top;">edition<br>
+      </td>
+      <td style="vertical-align: top;">review date<br>
+      </td>
+      <td style="vertical-align: top;">review text<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">JUnit Recipes<br>
+      </td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">2005-01-05</td>
+      <td style="vertical-align: top;">First review of JUnit Recipes<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">JUnit Recipes<br>
+      </td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">2005-08-10</td>
+      <td style="vertical-align: top;">Second review of JUnit Recipes</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Spring in Action</td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">2005-05-28</td>
+      <td style="vertical-align: top;">Review of Spring in Action</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Ajax in Action</td>
+      <td style="vertical-align: top;">1</td>
+      <td style="vertical-align: top;">2006-02-08</td>
+      <td style="vertical-align: top;">Most recent review</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Note that there are four reviews in all, but two of them are for the
+same book!<br>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;" colspan="3">go to front page</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ensure<br>
+      </td>
+      <td style="vertical-align: top;">text present<br>
+      </td>
+      <td style="vertical-align: top;">Found reviews for 3 books<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ensure<br>
+      </td>
+      <td style="vertical-align: top;">text present<br>
+      </td>
+      <td style="vertical-align: top;">JUnit Recipes<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ensure<br>
+      </td>
+      <td style="vertical-align: top;">text present<br>
+      </td>
+      <td style="vertical-align: top;">Spring in Action<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ensure<br>
+      </td>
+      <td style="vertical-align: top;">text present<br>
+      </td>
+      <td style="vertical-align: top;">Ajax in Action<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Check that the books with most recent reviews are listed before the
+ones with older reviews.<br>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">verify that<br>
+      </td>
+      <td style="vertical-align: top;">Ajax in Action<br>
+      </td>
+      <td style="vertical-align: top;">is before<br>
+      </td>
+      <td style="vertical-align: top;">JUnit Recipes<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">verify that<br>
+      </td>
+      <td style="vertical-align: top;">JUnit Recipes<br>
+      </td>
+      <td style="vertical-align: top;">is before<br>
+      </td>
+      <td style="vertical-align: top;">Spring in Action<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</body>
+</html>

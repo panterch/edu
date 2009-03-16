@@ -1,0 +1,20 @@
+package com.tddinaction.fit.strategyexamples;
+
+public class WebApplicationFixture extends
+        net.sourceforge.jwebunit.fit.WebFixture {
+
+    public boolean goToFrontPage() {
+        setBaseUrl("http://www.google.com/");
+        tester.beginAt("/webhp");
+        return true;
+    }
+
+    public boolean logInAs(String username) {
+        page("/login");
+        enter("j_username", username);
+        enter("j_password", Configuration.getPasswordFor(username));
+        submit();
+        tester.assertTextPresent("Welcome");
+        return true;
+    }
+}

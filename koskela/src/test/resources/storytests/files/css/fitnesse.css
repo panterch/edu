@@ -1,0 +1,16 @@
+.pass {
+  background: #bbffbb;
+}
+
+.fail {
+  background: #ffbbbb;
+}
+
+.fit_label {
+  font-style: italic;
+  color: #444444;
+}
+
+table, tr, td {
+  border: 1pt solid black;
+}

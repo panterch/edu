@@ -4,6 +4,7 @@
 .project
 *.class
 *.jar
+*.log
 .classpath
 .settings
 target

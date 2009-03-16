@@ -1,0 +1,32 @@
+package com.tddinaction.fit.strategyexamples;
+
+import javax.naming.InitialContext;
+
+import fitlibrary.DoFixture;
+
+public class UnderTheSkinFixture extends DoFixture {
+
+    ...
+    
+    public boolean subscribeForAnnouncements(String email) {
+        Subscriptions bean = (Subscriptions) getJndiService().lookup("ejb/Subscriptions");
+        bean.subscribe(email);
+    }
+    
+    ...
+    
+    public boolean postNewBlogEntry(String title, String content) {
+        BlogEngine blog = applicationContext.getBlogEngine();
+        BlogEntry entry = new BlogEntry();
+        entry.setTitle(title);
+        entry.setContent(content);
+        blog.saveEntry(entry);
+    }
+    
+    ...
+    
+    public boolean undo() {
+        Command command = new Undo();
+        applicationEventQueue.append(command);
+    }
+}

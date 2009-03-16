@@ -1,0 +1,31 @@
+HOW TO SET UP THE SOURCE CODE EXAMPLE PROJECT
+
+The source code download has been organized into a Maven-managed
+project in order to avoid you unnecessarily downloading a bunch of
+large .jar files over a slow network connection. This also allows
+you to get started quickly whether you use Eclipse or IntelliJ IDEA
+as your weapon of choice because Maven can generate the necessary
+project files for you. Oh, and you need Java 5 on your machine to
+be able to compile and run the examples.
+
+Without further ado, let's get started.
+
+1. Install Java 5 from
+   http://java.sun.com
+
+2. Install Maven (version 2.0.7 or newer) from 
+   http://maven.apache.org
+
+3. Download the book source code from
+   http://www.tddinaction.com/sourcecode.zip
+
+4. Unzip the source code archive in your workspace directory
+
+5. Open a console window to the extracted directory and run
+   mvn eclipse:eclipse (if you use Eclipse, or)
+   mvn idea:idea (if you use IntelliJ IDEA)
+
+6. Run a clean build to make sure everything is working fine
+   mvn clean test
+
+And you're done!

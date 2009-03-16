@@ -1,0 +1,19 @@
+package com.tddinaction.fit.strategyexamples;
+
+public class CreditCardValidationFixture extends fit.ColumnFixture {
+
+    public String cardNumber;
+    
+    public boolean isValid() {
+        return "".equals(validationMessage());
+    }
+    
+    public String validationMessage() {
+        try {
+            CreditCard card = new CreditCard(cardNumber);
+            return "";
+        } catch (ValidationException e) {
+            return e.getMessage();
+        }
+    }
+}
