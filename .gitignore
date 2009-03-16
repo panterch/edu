@@ -1,0 +1,12 @@
+*~
+*.swp
+*.swo
+.project
+*.class
+*.jar
+.classpath
+.settings
+target
+CVS
+
+

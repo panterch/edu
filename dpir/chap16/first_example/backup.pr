@@ -1,0 +1,10 @@
+
+backup '/home/russ/documents'
+
+backup '/home/russ/music', file_name('*.mp3') & file_name('*.wav')
+
+backup '/home/russ/images', except(file_name('*.tmp'))
+
+to '/external_drive/backups'
+
+interval 60
