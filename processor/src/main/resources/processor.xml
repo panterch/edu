@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- "simple" processors below / mostly used by other processors -->
+
+	<bean id="totalizer"
+		class="ch.fhzh.info2.processor.impl.calc.DocumentTotalizer" />
+
+	<bean id="chTaxAdder"
+		class="ch.fhzh.info2.processor.impl.calc.TaxAdder">
+		<property name="taxRate" value="0.079" />
+	</bean>
+
+	<bean id="deTaxAdder"
+		class="ch.fhzh.info2.processor.impl.calc.TaxAdder">
+		<property name="taxRate" value="0.19" />
+	</bean>
+
+	<bean id="currencyDefense"
+		class="ch.fhzh.info2.processor.impl.clean.CurrencyDefense" />
+
+	<bean id="cleaner"
+		class="ch.fhzh.info2.processor.impl.clean.DocumentCleaner" />
+
+	<bean id="copy"
+		class="ch.fhzh.info2.processor.impl.common.CopyDocumentProcessor" />
+
+	<bean id="noop"
+		class="ch.fhzh.info2.processor.impl.common.NoopDocumentProcessor" />
+
+	<bean id="touchDocument"
+		class="ch.fhzh.info2.processor.impl.common.TouchDocumentProcessor" />
+
+	<bean id="commonsLangPrinter"
+		class="ch.fhzh.info2.processor.impl.print.CommonsLangPrinter" />
+
+	<bean id="documentPrinter"
+		class="ch.fhzh.info2.processor.impl.print.DocumentPrinter" />
+
+	<bean id="springPrinter"
+		class="ch.fhzh.info2.processor.impl.print.SpringPrinter" />
+
+	<bean id="email"
+		class="ch.fhzh.info2.processor.impl.email.EmailSendingProcessor">
+		<property name="hostName" value="mail.fhzh.ch" />
+		<property name="from" value="bseelige@fhzh.ch" />
+		<property name="to" value="bseelige@fhzh.ch" />
+	</bean>
+
+	<!--  example of more complex processors built on other processors -->
+	<bean id="chain"
+		class="ch.fhzh.info2.processor.impl.common.ChainDocumentProcessor">
+		<property name="processors">
+			<list>
+				<ref bean="currencyDefense"/>
+				<ref bean="touchDocument" />
+				<ref bean="totalizer"/>
+				<ref bean="chTaxAdder"/>
+				<ref bean="documentPrinter"/>
+				<ref bean="email"/>
+			</list>
+		</property>
+	</bean>
+
+</beans>

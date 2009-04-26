@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ch.fhzh</groupId>
+	<artifactId>processor</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0.0</version>
+	<name>document processor</name>
+	<url>http://www.fhzh.ch</url>
+	<developers>
+		<developer>
+			<id>seb</id>
+			<name>Beat Seeliger</name>
+			<organization>FHZH</organization>
+			<organizationUrl>http://www.fhzh.ch</organizationUrl>
+			<roles>
+				<role>Programmierer</role>
+			</roles>
+		</developer>
+	</developers>
+
+
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>
+				https://maven-repository.dev.java.net/nonav/repository
+			</url>
+			<layout>legacy</layout>
+		</repository>
+	</repositories>
+
+
+	<dependencies>
+
+		<!--
+			======================
+			LOGGING
+		-->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0.4</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>avalon-framework</groupId>
+					<artifactId>avalon-framework</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>logkit</groupId>
+					<artifactId>logkit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!--
+			======================
+			commons lang
+		-->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<!--
+			======================
+			commons email
+		-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<!--
+			======================
+			Spring
+		-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+		</dependency>
+
+
+		<!-- 
+			======================	
+			TEST
+		-->
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.3.1</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<!-- compiler plugin settings (compile java5) -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.5</source>
+						<target>1.5</target>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+
+
+</project>
+
+

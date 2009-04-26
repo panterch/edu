@@ -1,0 +1,76 @@
+/**
+ * 
+ */
+package ch.fhzh.info2.processor.impl;
+
+import org.apache.commons.mail.EmailException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+
+import junit.framework.TestCase;
+import ch.fhzh.info2.document.Document;
+import ch.fhzh.info2.document.impl.DocumentTestVo;
+import ch.fhzh.info2.processor.DocumentProcessor;
+import ch.fhzh.info2.processor.DocumentProcessorException;
+import ch.fhzh.info2.processor.impl.email.EmailSendingProcessor;
+
+/**
+ * @author seb
+ *
+ */
+public class EmailSendingProcessorTest extends TestCase {
+	
+	private Document doc;
+	private EmailSendingProcessor proc;
+	
+    BeanFactory factory;
+    DocumentProcessor docProc;
+	
+	protected void setUp() {
+		this.doc = new DocumentTestVo();
+		this.doc.setPrintRepresentation("Hello, World!");
+		
+		this.proc = new EmailSendingProcessor();
+		this.proc.setFrom("foo@fhzh.ch");
+		this.proc.setTo("bar@fhzh.ch");
+		this.proc.setHostName("localhost");
+		
+		ClassPathResource resource = new ClassPathResource("processor.xml");
+        factory = new XmlBeanFactory(resource);
+	}
+	
+	public void testSendViaSpring() {
+		this.docProc = (DocumentProcessor) factory.getBean("email");
+		// we can only test here for failure of the
+		// email sending, evt. else must be tested
+		// with fully integrated system
+		try {
+			this.proc.processDocument(this.doc);
+		} catch (DocumentProcessorException e) {
+			// we except an email exception as cause
+			if (e.getCause() instanceof EmailException) {
+				return;
+			}
+		}
+		// should not be reached
+		fail();
+	}
+
+	public void testSend() {
+		// we can only test here for failure of the
+		// email sending, evt. else must be tested
+		// with fully integrated system
+		try {
+			this.proc.processDocument(this.doc);
+		} catch (DocumentProcessorException e) {
+			// we except an email exception as cause
+			if (e.getCause() instanceof EmailException) {
+				return;
+			}
+		}
+		// should not be reached
+		fail();
+	}
+
+}
