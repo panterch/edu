@@ -1,0 +1,71 @@
+diff --git a/app/views/articles/show.html.erb b/app/views/articles/show.html.erb
+index 1069371..989c453 100644
+--- a/app/views/articles/show.html.erb
++++ b/app/views/articles/show.html.erb
+@@ -13,7 +13,11 @@
+   <%=h @article.published %>
+ </p>
+ 
+-Comment!
++<%= link_to_function ("Comment!") do |page| 
++      page[:comment].toggle()
++    end
++%>
++<div id="comment">
+ <% form_for(@comment) do |f| %>
+   <%= f.error_messages %>
+ 
+@@ -29,7 +33,7 @@ Comment!
+     <%= f.submit 'Create' %>
+   </p>
+ <% end %>
+-
++</div>
+ 
+ <%= link_to 'Edit', edit_article_path(@article) %> |
+ <%= link_to 'Back', articles_path %>
+\ No newline at end of file
+diff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb
+index f8631de..a88f154 100644
+--- a/app/views/layouts/application.html.erb
++++ b/app/views/layouts/application.html.erb
+@@ -6,6 +6,7 @@
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <title>Articles: <%= controller.action_name %></title>
+   <%= stylesheet_link_tag 'scaffold' %>
++  <%= javascript_include_tag :defaults %>
+ </head>
+ <body>
+ 
+diff --git a/log/development.log b/log/development.log
+index aec1dd0..63bf1dd 100644
+--- a/log/development.log
++++ b/log/development.log
+@@ -327,3 +327,27 @@ Processing CommentsController#index (for ::1 at 2009-05-19 15:26:49) [GET]
+ Rendering template within layouts/application
+ Rendering comments/index
+ Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/comments]
++
++
++Processing ArticlesController#show (for ::1 at 2009-06-01 21:12:42) [GET]
++  Parameters: {"id"=>"1"}
++  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
++Rendering template within layouts/application
++Rendering articles/show
++Completed in 32ms (View: 15, DB: 0) | 200 OK [http://localhost/articles/1]
++
++
++Processing ArticlesController#show (for ::1 at 2009-06-01 21:13:01) [GET]
++  Parameters: {"id"=>"1"}
++  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
++Rendering template within layouts/application
++Rendering articles/show
++Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/articles/1]
++
++
++Processing ArticlesController#show (for ::1 at 2009-06-01 21:15:08) [GET]
++  Parameters: {"id"=>"1"}
++  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
++Rendering template within layouts/application
++Rendering articles/show
++Completed in 86ms (View: 76, DB: 0) | 200 OK [http://localhost/articles/1]

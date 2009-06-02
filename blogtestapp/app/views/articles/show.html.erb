@@ -1,0 +1,35 @@
+<p>
+  <b>Title:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @article.body %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%=h @article.published %>
+</p>
+
+Comment!
+<% form_for(@comment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :approved %><br />
+    <%= f.check_box :approved %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
