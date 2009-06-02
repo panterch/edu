@@ -1,0 +1,9 @@
+<p>
+  <b>Name:</b>
+  <%=h @picture.name %><br>
+  <%=image_tag @picture.photo.url(:medium) %>
+</p>
+
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

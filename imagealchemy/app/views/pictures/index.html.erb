@@ -1,0 +1,21 @@
+<h1>Listing pictures</h1>
+
+<ul id="picturelist" style="cursor: move">
+  <% @pictures.each do |picture| %>
+    <li id="item_<%= picture.id %>">
+      <%=picture.position%>
+      <%=link_to image_tag(picture.photo.url(:small)), picture %>
+    </li>
+  <% end %>
+</ul>
+
+<%= sortable_element "picturelist",
+:url => {:action => "sort", :id => @pictures},
+:complete => visual_effect(:highlight, "picturelist")
+%>
+
+
+
+<br />
+
+<%= link_to 'New picture', new_picture_path %>
