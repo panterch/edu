@@ -89,5 +89,6 @@ class PicturesController < ApplicationController
       picture.position = params["picturelist"].index(picture.id.to_s)+1
       picture.save
     end
+    render :nothing => true
   end
 end
