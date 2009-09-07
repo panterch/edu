@@ -2,6 +2,7 @@ blogtestapp
 cintro        Some basic examples in C
 dpir          Design Pattern in Ruby demo code (C) Russ Olsen
 koskela       Test Driven demo code (C) Lasse Koskela
+make_demo     Simple make file
 misc
 parser        simple html parser demo
 processor     spring dependency injection demo

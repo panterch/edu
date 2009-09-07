@@ -5,6 +5,8 @@
 *.class
 *.jar
 *.log
+*.o
+make_demo/test
 .classpath
 .settings
 target
