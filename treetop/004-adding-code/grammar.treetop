@@ -1,0 +1,34 @@
+grammar Arithmetic
+	rule addition
+		# adding labels to address elements of the rule (first, second)
+		# operator does not need a label since it only appears once
+		first:number optional_space operator optional_space second:number {
+			# inline method definition
+			def evaluate()
+				operator.evaluate(first, second)
+			end
+		}
+	end
+
+
+	rule number
+		[1-9] [0-9]* {
+			def evaluate
+				# evaluating a number by simply converting it to a integer
+				self.text_value.to_i
+			end
+		}
+	end
+
+	rule operator
+		'+' {
+			def evaluate(a, b)
+				a.evaluate + b.evaluate
+			end
+		}
+	end
+
+	rule optional_space
+		' '*
+	end
+end

@@ -1,0 +1,16 @@
+grammar Train
+	rule announcement
+		# strings are terminal symbols
+		# city and number are referring to the rule with same name
+		'The train to ' city ' leaves from platform ' number
+	end
+
+	rule city
+		'Aarau' / 'Basel' / 'Chur' / 'Zürich'
+	end
+
+	rule number
+		# small station with only 5 platforms
+		[1-5]
+	end
+end

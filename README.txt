@@ -7,6 +7,7 @@ misc_<x>      Misc examples in language x
 parser        simple html parser demo
 processor     spring dependency injection demo
 strategyDemo  strategy pattern demo
+treetop       Treetop language examples
 unittests     some special case unit tests
 
 Most projects are in C, Ruby or Java and for demonstrational purposes only.

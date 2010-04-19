@@ -1,0 +1,20 @@
+grammar Arithmetic
+	rule calculation
+		# adding labels to address elements of the rule (first, second)
+		# operator does not need a label since it only appears once
+		first:number optional_space operator optional_space second:number <CalculationNode>
+	end
+
+
+	rule number
+		[1-9] [0-9]* <NumberNode>
+	end
+
+	rule operator
+		'-' <OperatorNode> / '+' <OperatorNode> / '*' <OperatorNode> / '/' <OperatorNode>
+	end
+
+	rule optional_space
+		' '*
+	end
+end
