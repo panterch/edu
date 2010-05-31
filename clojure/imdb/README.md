@@ -22,7 +22,11 @@ Conduct empirical analyses on IMDB's data.
 ## Installation
 
     git clone ...
+    cd imdb/src
+    lein repl
+
     lein compile
+    lein uberjar
 
 ## License
 
