@@ -19,6 +19,13 @@ Conduct empirical analyses on IMDB's data.
     java -jar imdb-standalone.jar movies-by-years /tmp/movies.list.gz movies-by-years.csv
     java -jar imdb-standalone.jar genres-by-years /tmp/genres.list.gz genres-by-years.csv
 
+or
+
+    lein repl
+    user=> (load-file "src/imdb/analyses.clj")
+    user=> (imdb.analyses/-main)
+    user=> (imdb.analyses/-main :movies-by-years "/tmp/movies.list.gz" "/tmp/out.csv")
+
 ## Installation
 
     git clone ...
