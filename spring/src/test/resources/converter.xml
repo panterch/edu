@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="staticConverter" class="ch.fhzh.info2.currencyconverter.impl.StaticCurrencyConverter"/>
+	<bean id="factorConverter" class="ch.fhzh.info2.currencyconverter.impl.FactorCurrencyConverter">
+		<property name="factor" value="1.1"/>
+	</bean>
+	
+
+	<bean id="compositeConverter" class="ch.fhzh.info2.currencyconverter.impl.CompositeCurrencyConverter">
+		<property name="converters">
+			<list>
+				<ref bean="staticConverter"/>
+				<ref bean="factorConverter"/>
+			</list>
+		</property>
+	</bean>
+	
+
+</beans>
