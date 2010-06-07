@@ -14,4 +14,6 @@ CVS
 a.out
 core
 
+.metadata/**
+**/.DS_Store
 
