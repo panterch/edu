@@ -18,13 +18,13 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>org.springframework.core</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>org.springframework.context</artifactId>
+			<artifactId>spring-context</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
 		<dependency>
@@ -82,7 +82,21 @@
 			<scope>runtime</scope>
 		</dependency>
 
-	</dependencies>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 
 
 </project>

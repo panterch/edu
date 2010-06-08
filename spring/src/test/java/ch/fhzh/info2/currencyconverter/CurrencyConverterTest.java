@@ -15,7 +15,7 @@ public class CurrencyConverterTest extends TestCase {
 	
 	public void testCurrencyToString() {
 		Money chf = new Money(1045, "CHF");
-		Assert.assertEquals("10,45 CHF", chf.toString());
+    Assert.assertTrue(chf.toString().matches("10[,\\.]45 CHF"));
 	}
 	
 	public void testConverter() {
