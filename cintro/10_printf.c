@@ -7,7 +7,7 @@ int main()
   printf("char: %c\n", 'z');
   printf("string: %s\n", "abc");
   printf("43d to oct: %o\n", 43);
-  printf("43d to dec: %x\n", 43);
+  printf("43d to hex: %x\n", 43);
   printf("percent: %%\n");
   return 0;
 }
