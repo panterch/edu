@@ -19,13 +19,18 @@ public class MathTest {
     @Before
     public void setup() {
         instance = new HigherMath();
-        
     }
     
     @Test
     public void normalParameter() {
         double res = instance.sqrt(25);
         assertTrue(res == 5.0d);
+    }
+    
+    @Test
+    public void borderParameter() {
+        double res = instance.sqrt(0);
+        assertTrue(res == 0.0d);
     }
     
     @Test(expected=IllegalArgumentException.class)
