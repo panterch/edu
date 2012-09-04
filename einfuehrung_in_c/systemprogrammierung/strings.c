@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
   char str_1[] = "ab\n";
-  char str_2[] = {'b', 'b', '\n', '\0'};
+  char str_2[] = {'a', 'b', '\n', '\0'};
 
   printf("str_1: %s", str_1);
   printf("str_2: %s", str_2);
