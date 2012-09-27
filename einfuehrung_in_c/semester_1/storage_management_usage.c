@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #define ALLOCSIZE 10000 /* size of available space */
 
 static char allocbuf[ALLOCSIZE]; /* storage for alloc */
@@ -16,7 +18,15 @@ char *alloc(int n)	/* return pointer to n characters */
 
 void afree(char *p) /* free storage pointed to by p */
 {
-  // check wheter p is in range of allocbuf
   if (p >= allocbuf && p < allocbuf + ALLOCSIZE)
     allocp = p;
+}
+
+int main() {
+  char *data = alloc(10);
+  int i;
+  for (i=65; i<=75; i++) {
+    data[i-65] = i;
+    printf("data[%d]: %c\n", i-65, i);
+  }
 }

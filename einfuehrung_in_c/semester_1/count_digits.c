@@ -4,7 +4,7 @@
 int main() {
   int i, c;
   int ndigit[10];
-
+  
   // Initializing array to count of zero
   for (i = 0; i < 10; ++i)
     ndigit[i] = 0;

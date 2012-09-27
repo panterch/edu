@@ -1,18 +1,17 @@
 #include <stdio.h>
 
-int main() {
-  int i;
-
-  printf("First call with argument '10': \t%d\n", foo(10));
-  for(i=1; i<10; i++)
-    printf("%dth call without argument: \t%d\n", i, foo());
-}
-
-int foo(int n) {
+int foo() {
   static int x;
-  if(n)
-    x = n;
+  if(!x)
+    x = 5;
   else
     x++;
   return x;
+}
+
+int main() {
+  int i;
+
+  for(i=1; i<10; i++)
+    printf("%dth call: \t%d\n", i, foo());
 }
