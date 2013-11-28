@@ -1,4 +1,4 @@
-package ch.panter.decorator;
+package ch.panter.decorator.inputstream;
 
 import java.io.*;
 

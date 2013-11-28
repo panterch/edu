@@ -1,6 +1,7 @@
-package ch.panter.decorator;
+package ch.panter.decorator.inputstream;
 
 import java.io.*;
+
 
 public class InputDemo {
 	public static void main(String[] args) throws IOException {
@@ -10,9 +11,9 @@ public class InputDemo {
 
 			InputStream in = new FileInputStream("src/test/resources/test.txt");
 
-			// in = new BufferedInputStream(in);
+			in = new BufferedInputStream(in);
 			
-			// in = new LowerCaseInputStream(in);
+			in = new LowerCaseInputStream(in);
 
 			while ((c = in.read()) >= 0) {
 				System.out.print((char) c);
