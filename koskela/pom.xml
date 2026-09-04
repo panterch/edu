@@ -271,7 +271,7 @@
 		<dependency>
 			<groupId>org.fitnesse</groupId>
 			<artifactId>fitnesse</artifactId>
-			<version>20060719</version>
+			<version>20241026</version>
 		</dependency>
 		<dependency>
 			<groupId>beaninject</groupId>
